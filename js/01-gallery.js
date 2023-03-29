@@ -21,5 +21,11 @@ galleryEl.addEventListener("click", (e) => {
 	if (e.target.tagName !== "IMG") {
 		return;
 	}
-	basicLightbox.create(`<img src=${e.target.dataset.source}>`).show();
+	const instance = basicLightbox.create(`<img src=${e.target.dataset.source}>`);
+	instance.show();
+	document.addEventListener("keydown", (e) => {
+		if (e.code === "Escape") {
+			instance.close();
+		}
+	});
 });
