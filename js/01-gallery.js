@@ -4,7 +4,7 @@ import { galleryItems } from "./gallery-items.js";
 const galleryEl = document.querySelector(".gallery");
 
 galleryItems.forEach((el) => {
-	galleryEl.innerHTML += `<div class="gallery__item" >
+	galleryEl.innerHTML += `<li class="gallery__item" >
   <a class="gallery__link" href="${el.original}" >
     <img
       class="gallery__image"
@@ -13,7 +13,7 @@ galleryItems.forEach((el) => {
       alt="${el.description}"
     />
   </a>
-</div>`;
+</li>`;
 });
 
 galleryEl.addEventListener("click", (e) => {
